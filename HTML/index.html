@@ -18,19 +18,19 @@
     <button class="btn" onclick = "
     let systemChoice = generateRandomChoice() ;
     let resultMsg = getResult('Rock', systemChoice) ;
-    showResult('Rock', systemChoice, resultMsg) ; 
+    showResult('rock', systemChoice, resultMsg) ; 
     ">Rock</button>
 
     <button class="btn" onclick = "
     systemChoice = generateRandomChoice() ;
     resultMsg = getResult('Paper', systemChoice) ;
-    showResult('Paper', systemChoice, resultMsg) ;
+    showResult('paper', systemChoice, resultMsg) ;
     ">Paper</button>
 
     <button class="btn" onclick = "
     systemChoice = generateRandomChoice() ;
     resultMsg = getResult('Scissor', systemChoice) ;
-    showResult('Scissor', systemChoice, resultMsg) ;
+    showResult('scissor', systemChoice, resultMsg) ;
     ">Scissor</button>
 
     <!-- This button will be used to reset the Player's score. -->
@@ -58,10 +58,10 @@
         // and compute result. 
         function getResult(userMove, systemMove) {
             if (userMove === 'Rock') {
-                if (systemMove === 'Paper') {
+                if (systemMove === 'paper') {
                     return 'Computer won!' ;
                 }
-                else if (systemMove === 'Scissor') {
+                else if (systemMove === 'scissor') {
                     return 'Player won!' ;
                 }
                 else {
@@ -69,10 +69,10 @@
                 }
             } 
             else if (userMove === 'Paper') {
-                if (systemMove === 'Scissor') {
+                if (systemMove === 'scissor') {
                     return 'Computer won!' ;
                 }
-                else if (systemMove === 'Rock') {
+                else if (systemMove === 'rock') {
                     return 'Player won!' ;
                 }
                 else {
@@ -80,16 +80,21 @@
                 }
             }
             else {
-                if (systemMove === 'Rock') {
+                if (systemMove === 'rock') {
                     return 'Computer won!' ;
                 }
-                else if (systemMove === 'Paper') {
+                else if (systemMove === 'paper') {
                     return 'Player won!' ;
                 }
                 else {
                     return 'Tied!' ;
                 }
             }
+        }
+
+        // This function will display the final result in a webpage popup.
+        function showResult(userMove, systemMove, result) {
+            alert(`Player's choice is ${userMove}, computer's choice is ${systemMove}. ${result}`) ;
         }
     </script>
 </body>
