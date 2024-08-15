@@ -1,19 +1,28 @@
-// Creates an object to store the score of user.
-let score = {
-    wins: 0,
-    lost: 0,
-    tied: 0,
-} ;
+let scoreStr = localStorage.getItem('Score') ;
+let score ;
+resetScore(scoreStr) ;
+
+// Moving the initialization of score in the resetScore() function.
+//
+// // Creates an object to store the score of user.
+// score = {
+//     wins: 0,
+//     lost: 0,
+//     tied: 0,
+// } ;
 
 // Onclick function that will reset the user's score.
-function resetScore() {
-    score.wins = 0 ;
-    score.lost = 0 ;
-    score.tied = 0 ;
-
-    alert(`
-    Score has been reset.
-    Wins: ${score.wins}, Lost: ${score.lost}, Tied: ${score.tied}`) ;
+function resetScore(scoreStr) {
+    score = scoreStr ? JSON.parse(scoreStr) : {
+        wins: 0,
+        lost: 0,
+        tied: 0,
+    } ;
+    
+    // Function to display score.
+    score.displayscore = function() {
+        return `Wins: ${score.wins}, Lost: ${score.lost}, Tied: ${score.tied}` ; 
+    }
 }
 
 // Onclick function that will generate a random system choice in response to the choice of user.
@@ -88,5 +97,5 @@ function showResult(userMove, systemMove, result) {
     
     ${result}
     
-    Wins: ${score.wins}, Lost: ${score.lost}, Tied: ${score.tied}`) ;
+    ${score.displayscore()}`) ;
 }
