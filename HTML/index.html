@@ -37,5 +37,22 @@
     <div id="reset">
         <button class="reset-button">Reset</button> 
     </div>
+
+    <script>
+        // This function will generate a random system choice in response to the choice of user.
+        function generateRandomChoice() {
+            // 'Math.random()' funtion will generate a random value between 0 and 1.
+            let randomNumber = Math.random() * 3 ;
+            if (randomNumber < 1) {
+                return 'rock' ;
+            }
+            else if (randomNumber >= 1 && randomNumber < 2) {
+                return 'paper' ;
+            }
+            else {
+                return 'scissor' ;
+            }
+        }
+    </script>
 </body>
 </html>
