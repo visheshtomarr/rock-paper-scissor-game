@@ -39,6 +39,13 @@
     </div>
 
     <script>
+        // Creates an object to store the score of user.
+        let score = {
+            wins: 0,
+            lost: 0,
+            tied: 0,
+        } ;
+
         // This function will generate a random system choice in response to the choice of user.
         function generateRandomChoice() {
             // 'Math.random()' function will generate a random value between 0 and 1.
@@ -59,34 +66,43 @@
         function getResult(userMove, systemMove) {
             if (userMove === 'Rock') {
                 if (systemMove === 'paper') {
+                    score.lost++ ;
                     return 'Computer won!' ;
                 }
                 else if (systemMove === 'scissor') {
+                    score.wins++ ;
                     return 'Player won!' ;
                 }
                 else {
+                    score.tied++ ;
                     return 'Tied!' ;
                 }
             } 
             else if (userMove === 'Paper') {
                 if (systemMove === 'scissor') {
+                    score.lost++ ;
                     return 'Computer won!' ;
                 }
                 else if (systemMove === 'rock') {
+                    score.wins++ ;
                     return 'Player won!' ;
                 }
                 else {
+                    score.tied++ ;
                     return 'Tied!' ;
                 }
             }
             else {
                 if (systemMove === 'rock') {
+                    score.lost++ ;
                     return 'Computer won!' ;
                 }
                 else if (systemMove === 'paper') {
+                    score.wins++ ;
                     return 'Player won!' ;
                 }
                 else {
+                    score.tied++ ;
                     return 'Tied!' ;
                 }
             }
@@ -94,7 +110,12 @@
 
         // This function will display the final result in a webpage popup.
         function showResult(userMove, systemMove, result) {
-            alert(`Player's choice is ${userMove}, computer's choice is ${systemMove}. ${result}`) ;
+            alert(`
+            Player's choice is ${userMove}, computer's choice is ${systemMove}. 
+            
+            ${result}
+            
+            Wins: ${score.wins}, Lost: ${score.lost}, Tied: ${score.tied}`) ;
         }
     </script>
 </body>
