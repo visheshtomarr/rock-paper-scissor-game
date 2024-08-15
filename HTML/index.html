@@ -33,9 +33,10 @@
     showResult('scissor', systemChoice, resultMsg) ;
     ">Scissor</button>
 
-    <!-- This button will be used to reset the Player's score. -->
     <div id="reset">
-        <button class="reset-button">Reset</button> 
+        <button class="reset-button" onclick = "
+        resetScore() ;
+        ">Reset</button> 
     </div>
 
     <script>
@@ -46,7 +47,18 @@
             tied: 0,
         } ;
 
-        // This function will generate a random system choice in response to the choice of user.
+        // Onclick function that will reset the user's score.
+        function resetScore() {
+            score.wins = 0 ;
+            score.lost = 0 ;
+            score.tied = 0 ;
+
+            alert(`
+            Score has been reset.
+            Wins: ${score.wins}, Lost: ${score.lost}, Tied: ${score.tied}`) ;
+        }
+
+        // Onclick function that will generate a random system choice in response to the choice of user.
         function generateRandomChoice() {
             // 'Math.random()' function will generate a random value between 0 and 1.
             let randomNumber = Math.random() * 3 ;
@@ -61,7 +73,7 @@
             }
         }
 
-        // This function will take the user's choice and system's randomly generated choice,
+        // Onclick function that will take the user's choice and system's randomly generated choice,
         // and compute result. 
         function getResult(userMove, systemMove) {
             if (userMove === 'Rock') {
@@ -108,7 +120,7 @@
             }
         }
 
-        // This function will display the final result in a webpage popup.
+        // Onclick function that will display the final result in a webpage popup.
         function showResult(userMove, systemMove, result) {
             alert(`
             Player's choice is ${userMove}, computer's choice is ${systemMove}. 
