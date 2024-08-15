@@ -4,12 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-paper-scissor</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        .btn {
+            margin: 5px; 
+        }
+    </style>
 </head>
 <body>
     <h1>Rock/Paper/Scissor Game</h1>
-    <button class="btn">Rock</button>
-    <button class="btn">Paper</button>
-    <button class="btn">Scissor</button>
+    <button class="btn" onclick = "
+    let systemChoice = generateRandomChoice() ;
+    let resultMsg = getResult('Rock', systemChoice) ;
+    showResult('Rock', systemChoice, resultMsg) ; 
+    ">Rock</button>
+
+    <button class="btn" onclick = "
+    systemChoice = generateRandomChoice() ;
+    resultMsg = getResult('Paper', systemChoice) ;
+    showResult('Paper', systemChoice, resultMsg) ;
+    ">Paper</button>
+
+    <button class="btn" onclick = "
+    systemChoice = generateRandomChoice() ;
+    resultMsg = getResult('Scissor', systemChoice) ;
+    showResult('Scissor', systemChoice, resultMsg) ;
+    ">Scissor</button>
 
     <!-- This button will be used to reset the Player's score. -->
     <div id="reset">
