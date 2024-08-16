@@ -23,6 +23,8 @@ function resetScore(scoreStr) {
     score.displayscore = function() {
         return `Wins: ${score.wins}, Lost: ${score.lost}, Tied: ${score.tied}` ; 
     }
+
+    showResult() ;
 }
 
 // Onclick function that will generate a random system choice in response to the choice of user.
@@ -92,10 +94,22 @@ function showResult(userMove, systemMove, result) {
     // Store the updated value of score in local storage.
     localStorage.setItem('Score', JSON.stringify(score)) ;
 
-    alert(`
-    Player's choice is ${userMove}, computer's choice is ${systemMove}. 
+    // alert(`
+    // Player's choice is ${userMove}, computer's choice is ${systemMove}. 
     
-    ${result}
+    // ${result}
     
-    ${score.displayscore()}`) ;
+    // ${score.displayscore()}`) ;
+
+    // Instead of showing the result in a popup, we will display it on the webpage itself.
+    document.querySelector('#user-move').innerText = 
+        userMove ? `Player's choice is ${userMove}` : '' ;
+
+    document.querySelector('#system-move').innerText = 
+        systemMove ? `Computer's choice is ${systemMove}` : '' ;
+
+    document.querySelector('#result').innerText = 
+        result ? result : '' ;
+    
+    document.querySelector('#score').innerText = score.displayscore() ;
 }
