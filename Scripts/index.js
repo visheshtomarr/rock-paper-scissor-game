@@ -21,7 +21,7 @@ function resetScore(scoreStr) {
     
     // Function to display score.
     score.displayscore = function() {
-        return `Wins: ${score.wins}, Lost: ${score.lost}, Tied: ${score.tied}` ; 
+        return `Score: Wins: ${score.wins}, Lost: ${score.lost}, Tied: ${score.tied}` ; 
     }
 
     showResult() ;

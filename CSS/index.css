@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+}
+.btn {
+    margin: 2.5em; 
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#rock {
+    height: 100px;
+}
+#paper {
+    height: 100px;
+}
+#scissor {
+    height: 100px;
+}
+.reset-button{
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+#reset {
+    height: 40px;
+}

@@ -4,14 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-paper-scissor</title>
-    <style>
-        body {
-            text-align: center;
-        }
-        .btn {
-            margin: 5px; 
-        }
-    </style>
+    <link rel="stylesheet" href="../CSS/index.css">
 </head>
 <body>
     <h1>Rock/Paper/Scissor Game</h1>
@@ -19,30 +12,30 @@
     let systemChoice = generateRandomChoice() ;
     let resultMsg = getResult('Rock', systemChoice) ;
     showResult('rock', systemChoice, resultMsg) ; 
-    ">Rock</button>
+    "><img src="../Images/Rock.jpg" alt="Rock button" id="rock"></button>
 
     <button class="btn" onclick = "
     systemChoice = generateRandomChoice() ;
     resultMsg = getResult('Paper', systemChoice) ;
     showResult('paper', systemChoice, resultMsg) ;
-    ">Paper</button>
+    "><img src="../Images/Paper.jpg" alt="Paper button" id="paper"></button>
 
     <button class="btn" onclick = "
     systemChoice = generateRandomChoice() ;
     resultMsg = getResult('Scissor', systemChoice) ;
     showResult('scissor', systemChoice, resultMsg) ;
-    ">Scissor</button>
+    "><img src="../Images/Scissor.jpg" alt="Scissor button" id="scissor"></button>
 
     <h3 id="user-move"></h3>
     <h3 id="system-move"></h3>
     <h3 id="result"></h3>
     <h3 id="score"></h3>
 
-    <div id="reset">
+    <div id="reset-container">
         <button class="reset-button" onclick = "
         localStorage.clear() ;
         resetScore() ;
-        ">Reset</button> 
+        "><img src="../Images/Reset.png" alt="Reset button" id="reset"></button> 
     </div>
 
     <script src = "../Scripts/index.js"></script>
